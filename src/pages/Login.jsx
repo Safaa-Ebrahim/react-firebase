@@ -5,9 +5,8 @@ import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-import { signInWithEmailAndPassword, signInWithPopup ,GoogleAuthProvider} from "firebase/auth";
-import { provider } from "../firebase/firebase-config";
-
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { googleSignIn } from "../firebase/firebase-config";
 // font awesom
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -41,10 +40,9 @@ export default function Login({ auth, setIsLoggedIn }) {
       dispatch(showToast("Email or Password not correct. Please try again."));
     }
   };
-  const provider = new GoogleAuthProvider();
   const handleGoogleSignIn = (e) => {
     e.preventDefault();
-    signInWithPopup(auth, provider)
+    googleSignIn()
       .then((result) => {
         // store token in the localStorage
         const token = result.user.accessToken;
