@@ -44,10 +44,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         await signOut(auth);
         setIsLoggedIn(false);
         localStorage.removeItem("TokenFirebase");
-        // siginupwith google
-        // localStorage.removeItem("nameGoogle");
-        // localStorage.removeItem("emailGoogle");
-        // localStorage.removeItem("profilePic");
         dispatch(showToast("Logout successfully!"));
         navigate("/login", { replace: true });
       } catch (error) {
@@ -112,9 +108,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                     }
                   }}
                   aria-current="page"
-                  to="/h"
+                  to="/movies"
                 >
-                  Home
+                  Movies
                 </NavLink>
               </li>
             </ul>
@@ -163,27 +159,51 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                   </li>
                 </>
               ) : (
-                <li>
-                  <span
-                    className="nav-link fs-5 text-danger btn text-start"
-                    aria-current="page"
-                    onClick={() => {
-                      if (
-                        navToggleBtn.current.getAttribute("aria-expanded") ===
-                        "true"
-                      ) {
-                        navToggleBtn.current.click();
-                      }
-                      logout();
-                    }}
-                  >
-                    Logout
-                    <FontAwesomeIcon
-                      className="fs-6 ps-2"
-                      icon={faRightFromBracket}
-                    />
-                  </span>
-                </li>
+                <>
+                  <li>
+                    <NavLink
+                      className="nav-link fs-5 text-white hover-color-yellow"
+                      onClick={() => {
+                        if (
+                          navToggleBtn.current.getAttribute("aria-expanded") ===
+                          "true"
+                        ) {
+                          navToggleBtn.current.click();
+                        }
+                      }}
+                      aria-current="page"
+                      to="/profile"
+                    >
+                      {" "}
+                      <FontAwesomeIcon
+                        className="fs-6 pe-1"
+                        icon={faUserCircle}
+                      />
+                      Profile{" "}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <span
+                      className="nav-link fs-5 text-danger btn text-start"
+                      aria-current="page"
+                      onClick={() => {
+                        if (
+                          navToggleBtn.current.getAttribute("aria-expanded") ===
+                          "true"
+                        ) {
+                          navToggleBtn.current.click();
+                        }
+                        logout();
+                      }}
+                    >
+                      Logout
+                      <FontAwesomeIcon
+                        className="fs-6 ps-2"
+                        icon={faRightFromBracket}
+                      />
+                    </span>
+                  </li>
+                </>
               )}
             </ul>
           </div>
