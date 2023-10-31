@@ -41,9 +41,9 @@ export default function Login({ auth, setIsLoggedIn }) {
       dispatch(showToast("Email or Password not correct. Please try again."));
     }
   };
+  const provider = new GoogleAuthProvider();
   const handleGoogleSignIn = (e) => {
     e.preventDefault();
-    const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
         // store token in the localStorage
