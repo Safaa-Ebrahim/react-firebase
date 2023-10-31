@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-import { signInWithEmailAndPassword} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { googleSignIn } from "../firebase/firebase-config";
 
 // font awesom
@@ -52,13 +52,6 @@ export default function Login({ auth, setIsLoggedIn }) {
         setIsLoggedIn(true);
         dispatch(showToast("Singin with google successfully!"));
         navigate("/home");
-
-        // const name = result.user.displayName;
-        // const email = result.user.email;
-        // const profilePic = result.user.photoURL;
-        // localStorage.setItem("nameGoogle", name);
-        // localStorage.setItem("emailGoogle", email);
-        // localStorage.setItem("profilePic", profilePic);
       })
       .catch((err) => {
         dispatch(showToast("failed to Singin with google. Please try again."));
@@ -145,7 +138,6 @@ export default function Login({ auth, setIsLoggedIn }) {
             <button
               className="login-with-google-btn w-100"
               onClick={handleGoogleSignIn}
-              
             >
               Sign In With Google
             </button>
