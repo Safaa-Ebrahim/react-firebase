@@ -22,7 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-// export const provider = new GoogleAuthProvider();
+
 export function googleSignIn() {
   const googleAuthProvider = new GoogleAuthProvider();
   return signInWithPopup(auth, googleAuthProvider);
