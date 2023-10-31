@@ -27,8 +27,8 @@ const Home = () => {
                   <img
                     src={url}
                     alt="storage url from firebase"
-                    className="rounded image-upload"
-                    style={{ height: "100px" }}
+                    className="rounded image-upload border"
+                    style={{ height: "150px" }}
                   />
                 </div>
               );
