@@ -60,6 +60,7 @@ export default function Login({ auth, setIsLoggedIn }) {
         // localStorage.setItem("profilePic", profilePic);
       })
       .catch((err) => {
+        console.log(err);
         dispatch(showToast("failed to Singin with google. Please try again."));
       });
   };
