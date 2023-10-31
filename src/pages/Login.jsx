@@ -5,8 +5,9 @@ import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup ,GoogleAuthProvider} from "firebase/auth";
 import { provider } from "../firebase/firebase-config";
+
 // font awesom
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -42,6 +43,7 @@ export default function Login({ auth, setIsLoggedIn }) {
   };
   const handleGoogleSignIn = (e) => {
     e.preventDefault();
+    const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
         // store token in the localStorage
