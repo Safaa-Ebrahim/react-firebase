@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+// components
+import AppRouter from "./router/AppRouter";
+import ToastInfo from "./components/common/toast";
+import { showToast } from "./store/slices/toastSlice";
 
 function App() {
+  const toastMsg = useSelector((state) => state.toastInfo.msg);
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+      {toastMsg && (
+        <ToastInfo
+          msg={toastMsg}
+          show={toastMsg ? true : false}
+          onDismissToast={() => dispatch(showToast(""))}
+        />
+      )}
+    </BrowserRouter>
   );
 }
 
 export default App;
+{
+  /* <GoogleSignIn /> */
+}
+{
+  /*
+<hr style={{ width: "400px" }} />
+<Register setUser={setUser} auth={auth} updateUserName={updateUserName}/>
+<Login auth={auth} />
+<h4> User Logged In: </h4>
+{user?.email}
+<p>UserName: {user?.displayName} </p>
+<button onClick={logout}> Sign Out </button> */
+}
