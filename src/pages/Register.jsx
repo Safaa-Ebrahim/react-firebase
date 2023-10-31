@@ -18,7 +18,7 @@ import { showToast } from "./../store/slices/toastSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye ,faEyeSlash} from "@fortawesome/free-solid-svg-icons";
 
-export default function Register({ setUser, auth, updateUserName }) {
+export default function Register({ setUser, auth }) {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
