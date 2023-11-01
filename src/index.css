@@ -132,3 +132,23 @@ code {
   line-height: 1;
 }
 /* end notfound page */
+
+/* start add book  */
+.input-group-text {
+  background-color: #212529;
+  color: #fff;
+  font-weight: bold;
+}
+.edit,
+.delete {
+  padding: 0px 6px;
+  border-radius: 2px;
+}
+
+.edit {
+  margin-right: 10px;
+}
+table {
+  text-align: center;
+}
+/* end add book  */
