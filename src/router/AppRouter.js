@@ -11,8 +11,8 @@ import NotFound from "./../pages/NotFound";
 import Home from "./../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import Movies from "../pages/Movies";
 import Profile from "../pages/Profile";
+import Books from './../pages/Books';
 
 const AppRouter = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,7 +31,7 @@ const AppRouter = () => {
       >
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/books" element={<Books />} />
         <Route
           path="/login"
           element={<Login auth={auth} setIsLoggedIn={setIsLoggedIn} />}
