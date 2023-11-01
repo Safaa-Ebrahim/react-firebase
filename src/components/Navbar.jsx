@@ -108,9 +108,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                     }
                   }}
                   aria-current="page"
-                  to="/movies"
+                  to="/books"
                 >
-                  Movies
+                  Books
                 </NavLink>
               </li>
             </ul>
