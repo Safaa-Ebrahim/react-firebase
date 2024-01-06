@@ -2,32 +2,30 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
-
 const firebaseConfig = {
-  apiKey: "AIzaSyD4i_-GvKjR5dem2k82nVEMood2J6zdyq0",
+  apiKey: process.env.REACT_APP_API_KEY,
 
-  authDomain: "authentication-tutorial-bdd9b.firebaseapp.com",
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
 
-  projectId: "authentication-tutorial-bdd9b",
+  projectId: process.env.REACT_APP_PROJECT_ID,
 
-  storageBucket: "authentication-tutorial-bdd9b.appspot.com",
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
 
-  messagingSenderId: "657143896129",
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 
-  appId: "1:657143896129:web:6068c3f460d439ceb04ec0",
+  appId: process.env.REACT_APP_APP_ID,
 
-  measurementId: "G-4EWQPWVBED",
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
 
 export function googleSignIn() {
   const googleAuthProvider = new GoogleAuthProvider();
   return signInWithPopup(auth, googleAuthProvider);
 }
 
-export const storage =getStorage(app);
+export const storage = getStorage(app);
 
 export const db = getFirestore(app);
