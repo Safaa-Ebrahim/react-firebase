@@ -15,7 +15,7 @@ const Books = () => {
     <>
       <Container>
         <Row>
-          <Col className="col-12 col-md-6 m-auto">
+          <Col className="col-12 col-md-6 col-lg-4 m-auto">
             <AddBook id={bookId} setBookId={setBookId} />
           </Col>
         </Row>
