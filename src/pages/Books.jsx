@@ -13,9 +13,9 @@ const Books = () => {
 
   return (
     <>
-      <Container style={{ width: "400px" }}>
+      <Container>
         <Row>
-          <Col>
+          <Col className="col-12 col-md-6 m-auto">
             <AddBook id={bookId} setBookId={setBookId} />
           </Col>
         </Row>
