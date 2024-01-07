@@ -16,11 +16,11 @@ const Home = () => {
           <h2 className="text-center fw-bold">
             The image that storage in the firebase
           </h2>
-          <div className="d-flex justify-content-center align-items-center gap-3">
+          <div className="d-flex justify-content-center align-items-center gap-3 flex-wrap">
             {imageUrls.map((url, index) => {
               return (
                 <div
-                  className="w-100 d-flex justify-content-center align-items-center"
+                  className="d-flex justify-content-center align-items-center"
                   height={"200px"}
                   key={index}
                 >
