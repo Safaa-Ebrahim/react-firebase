@@ -19,9 +19,7 @@ website is a practise of learning firebase and react:
 
 ### Screenshot
 
-```bash
 ![](./src/assets/readme-screenshot.png)
-```
 
 ![](./src/assets/readme-screenshot2.png)
 
